@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>手风琴效果</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		#shoufengqin{
+			width: 938px;
+			height: 128px;
+			border: 1px solid gray;
+			/*position: relative;*/
+		}
+		#shoufengqin li{
+			width: 156px;
+			height: 128px;
+			float: left;
+			overflow: hidden;
+
+		}
+		#shuofengqin li a{
+			display: block;
+			height: 128px;
+			width: 156px;
+			position: relative;
+			overflow: hidden;
+		}
+		#shoufengqin img{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 117px;
+			height: 72px;
+		}
+	</style>
+</head>
+<body>
+用到的知识：浮动，遮罩层及其透明度，动画（js和css两种选择，css3的transition过渡属性），鼠标事件监听mouseover
+<p>手风琴效果的宽度不变，等于四个列表项宽度+展开列表项的宽度</p>
+<div id="shoufengqin">
+	<ul>
+		<li>
+			<a href="#">
+				<img src="http://gtms01.alicdn.com/tps/i1/T1Lvt3Fv4kXXbA5QAK-195-120.jpg_Q90.jpg">
+				<div class="wenzi">
+					<h3 style="color: #f62368;">聚美妆</h3>
+					<p>聚美妆12周年庆</p>
+					<p class="jiage"><strong>1</strong><i>折起</i></p>
+					<i class="line"></i>
+					<i class="mask"></i>
+				</div>
+			</a>
+		</li>
+
+		<li>
+			<a href="#">
+				<img src="http://gtms01.alicdn.com/tps/i1/T1Lvt3Fv4kXXbA5QAK-195-120.jpg_Q90.jpg">
+				<div class="wenzi">
+					<h3 style="color: #f62368;">聚美妆</h3>
+					<p>聚美妆12周年庆</p>
+					<p class="jiage"><strong>1</strong><i>折起</i></p>
+					<i class="line"></i>
+					<i class="mask"></i>
+				</div>
+			</a>
+		</li>
+
+		<li>
+			<a href="#">
+				<img src="http://gtms01.alicdn.com/tps/i1/T1Lvt3Fv4kXXbA5QAK-195-120.jpg_Q90.jpg">
+				<div class="wenzi">
+					<h3 style="color: #f62368;">聚美妆</h3>
+					<p>聚美妆12周年庆</p>
+					<p class="jiage"><strong>1</strong><i>折起</i></p>
+					<i class="line"></i>
+					<i class="mask"></i>
+				</div>
+			</a>
+		</li>
+
+		<li>
+			<a href="#">
+				<img src="http://gtms01.alicdn.com/tps/i1/T1Lvt3Fv4kXXbA5QAK-195-120.jpg_Q90.jpg">
+				<div class="wenzi">
+					<h3 style="color: #f62368;">聚美妆</h3>
+					<p>聚美妆12周年庆</p>
+					<p class="jiage"><strong>1</strong><i>折起</i></p>
+					<i class="line"></i>
+					<i class="mask"></i>
+				</div>
+			</a>
+		</li>
+
+		<li>
+			<a href="#">
+				<img src="http://gtms01.alicdn.com/tps/i1/T1Lvt3Fv4kXXbA5QAK-195-120.jpg_Q90.jpg">
+				<div class="wenzi">
+					<h3 style="color: #f62368;">聚美妆</h3>
+					<p>聚美妆12周年庆</p>
+					<p class="jiage"><strong>1</strong><i>折起</i></p>
+					<i class="line"></i>
+					<i class="mask"></i>
+				</div>
+			</a>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

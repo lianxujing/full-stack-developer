@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>新闻发布系统</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{background-color: gray;}
+	</style>
+	<script type="text/javascript">
+		function foo(){
+			if(myform.title.value==""){
+				alert('请填写你的新闻标题');
+				myform.title.focus();
+				return false;
+			}
+			if(myform.content.value==""){
+				alert('新闻内容不能为空');
+				myform.content.focus();
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<!--发布新闻首页-->
+	
+	<form method="post" action="new_post.php" name="myform" onsubmit="return foo();">
+		<h1>新闻发布系统</h1>
+		<p>标题：<input type="text" name="title"></p>
+		<p>内容：<textarea cols="30" rows="5" name="content"></textarea></p>
+		<p><button>发布新闻</button></p>
+	</form>
+</body>
+</html>

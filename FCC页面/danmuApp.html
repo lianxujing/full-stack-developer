@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>弹幕墙</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		#container{
+			width: 1142px;
+			margin:0 auto;
+		}
+		#qiang{
+			width: 1140px;
+			height: 380px;
+			border: 1px solid gray;
+			margin: 20px auto;
+		}
+		#gongneng{
+			width: 430px;
+			height: 100px;
+			margin: 0 auto;
+		}
+		#content{
+			display: block;
+			width: 400px;
+			height: 35px;
+			line-height: 30px;
+			padding-left: 10px;
+			margin-bottom: 20px;
+		}
+		#fashe{
+			width: 160px;
+			height: 35px;
+			margin-left: 40px;
+			border: 1px solid orange;
+			color: orange;
+			background-color: white;
+		}
+		#qingping{
+			width: 160px;
+			height: 35px;
+			margin-left: 10px;
+			background-color: white;
+			border: 1px solid gray;
+		}
+		#foot{
+			text-align: center;
+			margin-top: 50px;
+			color: gray;
+			font-size: 15px;
+			line-height: 10px;
+		}
+		#dizhi{
+			text-decoration: none;
+		}
+	</style>
+	<link rel="stylesheet" type="text/javascript" href="jquery-2.1.4.min.js"/>
+	<link rel="stylesheet" type="text/javascript" href="https://cdn.wilddog.com/js/client/current/wilddog.js"/>
+</head>
+<body>
+<div id="container">
+	<div id="qiang">
+	<!--这部分代码需要修改-->
+	<!--
+		<div class="dm_screen">
+      		<div class="dm_mask"></div>
+      		<div class="dm_show">
+      			
+     		 </div>
+  		</div>
+  	-->
+	</div>
+	<div id="gongneng">
+		<input type="text" name="" placeholder="说点什么？" id="content" />
+		<button id="fashe">发射</button>
+		<button id="qingping">清屏</button>
+	</div>
+
+<div id="foot">
+	<i>制作者：鸢尾花</i><br/><br/>
+	<i>参考页面：http://codepen.io/huluoyang/full/GZbBwL//<a href="http://codepen.io/huluoyang/full/GZbBwL//" id="dizhi">链接地址</a></i>
+</div>
+</div>
+<script>
+	$(document).ready(function() {
+    //提示：已经在页面导航部分的Settings中的JavaScript部分引入了wildog.js和jquery.js
+	  //在www.wildog.com 注册一个账号，创建一个应用，自动生成一个url,替换下边url即可
+	  var ref = new Wilddog("https://yangkai001.wilddogio.com/");
+	  var arr = [];
+	  //把数据提交到野狗云
+	  $("#fashe").click(function() {
+	    var text = $("#content").val();
+	    ref.child('message').push(text);
+	    $("#content").val('');
+	  });
+	  //响应按键点击事件
+	  $("#content").keypress(function(event) {
+	    if (event.keyCode == "13") {
+	      $("#fashe").trigger('click');
+	    }
+	  });
+	  //响应按键清除事件
+	  $("#qingping").click(function() {
+	    ref.remove();
+	    arr = [];
+	    $('.dm_show').empty();
+	  });
+	  //监听云端数据变更，云端数据变化，弹幕框里数据也跟着变化。
+	  ref.child('message').on('child_added', function(snapshot) {
+	    var text = snapshot.val();
+	    arr.push(text);
+	    var textObj = $("<div class=\"dm_message\"></div>");
+	    textObj.text(text);
+	    $(".dm_show").append(textObj);
+	    moveObj(textObj);
+	  });
+
+	  ref.on('child_removed', function() {
+	    arr = [];
+	    $('.dm_show').empty();
+	  });
+	  //按照时间规则显示弹幕内容。	
+	  var topMin = $('.dm_mask').offset().top;
+	  var topMax = topMin + $('.dm_mask').height();
+	  var _top = topMin;
+
+	  var moveObj = function(obj) {
+	    var _left = $('.dm_mask').width() - obj.width();
+	    _top = _top + 50;
+	    if (_top > (topMax - 50)) {
+	      _top = topMin;
+	    }
+	    obj.css({
+	      left: _left,
+	      top: _top,
+	      color: getRandomColor()
+	    });
+	    var time = 20000 + 10000 * Math.random();
+	    obj.animate({
+	      left: "-" + _left + "px"
+	    }, time, function() {
+	      obj.remove();
+	    });
+	  }
+
+	  var getRandomColor = function() {
+	    return '#' + (function(h) {
+	      return new Array(7 - h.length).join("0") + h
+	    })((Math.random() * 0x1000000 << 0).toString(16))
+	  }
+
+	  var getAndRun = function() {
+	    if (arr.length > 0) {
+	      var n = Math.floor(Math.random() * arr.length + 1) - 1;
+	      var textObj = $("<div>" + arr[n] + "</div>");
+	      $(".dm_show").append(textObj);
+	      moveObj(textObj);
+	    }
+
+	    setTimeout(getAndRun, 3000);
+	  }
+
+	  jQuery.fx.interval = 50;
+	  getAndRun();
+	});
+</script>
+</body>
+</html>

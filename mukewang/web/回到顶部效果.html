@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>回到顶部效果</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#ding{
+			width: 1190px;
+			margin:0 auto;
+		}
+		#btn{
+			width: 40px;
+			height: 40px;
+			position: fixed;
+			left: 50%;
+			margin-left: 600px;
+			bottom: 30px;
+			background:url(images/top_bg.png) no-repeat left top;
+			display: none;
+		}
+		#btn:hover{
+			background:url(images/top_bg.png) no-repeat left -40px;
+		}
+	</style>
+</head>
+<body>
+	<p>案例说明：锚链接、回到顶部效果，这里好像还有另外一种效果。<br>
+	document.documentElement.scrollTop滚动条的数值，可读写<br>
+	以上是DOM操作<br>
+	window.onload页面加载完毕后触发<br>
+	onclick点击后触发<br>
+	window.onscroll滚动条滚动时触发<br>
+	document.getElementById根据ID获取标签元素<br>
+	上边是事件运用<br>
+	setInterval()设置定时器，需传2个参数<br>
+	clearInterval()关闭定时器，需传1个参数。<br>
+	</p>
+	<div id="ding">
+		<img src="images/tb_bg.jpg">
+	</div>
+	<a href="javascript:;" id="btn" title="回到顶部"></a>
+	<script type="text/javascript">
+
+		window.onload=function(){
+			var btn=document.getElementById('btn');
+			var timer=null;
+			var istop=true;
+			//获取页面可视区域的高度
+			var clientHeight=document.documentElement.clientHeight;
+			window.onscroll=funciton(){
+				var ostop=document.documentElement.scrollTop||document.body.scrollTop;
+				if(ostop>=clientHeight){
+					btn.style.display='block';
+				}else{
+					btn.style.display='none';
+				}
+				/*
+				if(!istop){
+					clearInterval(timer);
+				}
+				istop=false;*/
+			}
+			
+			btn.onclick=function(){
+				timer=setInterval(function(){
+					var ostop=document.documentElement.scrollTop||document.body.scrollTop;
+					var ispeed=Math.floor(ostop/30);
+					document.documentElement.scrollTop=document.body.scrollTop-=ostop-ispeed;
+					if(ostop==0){
+						clearInterval(timer);
+					}
+				},30);
+				
+				
+			}
+		}
+	</script>
+	<div id="shuoming">案例说明：</div>
+</body>
+</html>

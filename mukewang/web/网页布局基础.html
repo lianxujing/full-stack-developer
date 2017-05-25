@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>网页布局基础</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#note{
+			background: url(../images/纹理.jpg);
+			width: 80%;
+			margin:10px auto;
+			font:18px "微软雅黑";
+			word-spacing: 1em;
+			line-height: 30px;
+			text-indent: 2em;
+		}
+		#note h2{
+			background-color: gray;
+			padding:5px;
+		}
+		.blue{color: blue;}
+		.red{color: red;}
+		#conent{
+			width: 1000px;
+			height: 800px;
+			margin:0 auto;
+		}
+		#content #left{
+			width: 20%;
+			background-color: red;
+			height: 300px;
+			float: left;
+		}
+		#content #right{
+			width: 80%;
+			background-color: blue;
+			height: 300px;
+			float: right;
+		}
+		#content #clear{width: 100%;overflow: hidden;}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<div id="left"></div>
+		<div id="right"></div>
+		<div id="clear"></div>
+		<div>这个里面包含了这节课的知识点</div>
+	</div>
+	<div id="note">
+		<h2>课程笔记</h2>
+		<p>样式显示原则是就近原则。（行内样式、内部样式、外部样式）；</p>
+		<p>border简写属性、font简写属性、background简写属性；</p>
+		<p>样式追加</p>
+		<p>margin属性值auto的含义：根据浏览器的宽度自动的设置两边的外边距，原理：（浏览器的宽度-外包含层的宽度）/2=外边距</p>
+		<p>如果想让页面自动居中，当设置了margin属性为auto的时候，不能再设置浮动或绝对定位属性。</p>
+		<p><span class="red">当元素没有设置宽度值，而设置了浮动属性，元素的宽度随内容的变化而变化。</span></p>
+		<p><h3>清除浮动的方法：</h3></p>
+		<p>第一种方法：clear属性——常用clear:both;clear:left;clear:right;</p>
+		<p>第二种方法：同时设置width:100%（或固定宽度）+overflow:hidden;</p>
+		<hr/>
+		<p>float属性特点：元素会左移、右移，直到触碰到容器为止。设置了浮动的元素，仍旧处于标准文档流中。对紧邻其后元素的影响：相邻元素上移，占据其后位置，紧挨着它，并排显示。
+		</p>
+		<p>浮动导致的问题：父元素高度无法自动扩展，元素上移，填满浮动元素右侧（或中间）的间隙。</p>
+		<h2>页面完成时间：</h2>
+		<p>2017年4月4日10:46</p>
+	</div>
+</body>
+</html>

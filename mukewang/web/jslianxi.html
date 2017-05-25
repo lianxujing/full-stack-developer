@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js练习页面</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+	
+</head>
+<body>
+	<h2>一个人测试页面</h2>
+	<h2>二个人测试页面</h2>
+	<p></p>
+	<span id="yige"></span>
+	<script type="text/javascript">
+		//alert($);
+		//$("p").html("通过JQ设置的helo还");
+		$("body *").html("background-color");
+		$("p").html("imooc");
+		$("#yige,p,h2").html("一个人div改变的");
+		
+		$("p").css("font-size","32px");
+		$("p").css("color","red");
+		$("body>h2").html("通过jq设置");
+	</script>
+	<div id="demo" onclick="myfunction()">一个人</div>
+	<span>一个得唔得</span>
+	<script type="text/javascript">
+		//document.getElementById("demo").innerHTML="HTML world";
+		//document.getElementById("demo").innerHTML="HTML world2";
+		//document.write("<h1>一个人</h1>");
+		//function myfunction(){
+			//document.getElementById("demo").innerHTML="点击只后的内容";
+			//var mychar="hello2"
+			//alert(mychar);
+			//$("#demo").css("font-size","40px");
+		//}
+		//for(var i=0;i<9;i++){
+		//	document.write("杨凯");
+		//	document.write("<br>");
+		//}
+	</script>
+</body>
+</html>

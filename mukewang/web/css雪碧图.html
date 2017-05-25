@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css雪碧图</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#content{
+			border:1px solid black;
+			width: 180px;
+			background-color: gray;
+			margin:30px;
+		}
+		ul{list-style: none;}
+		ul li{
+			border-bottom: 1px dotted gray;
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			background-color: #ccc;
+			font-size: 25px;
+		}
+		ul li i{
+			display: inline-block;
+			width: 30px;
+			height: 20px;
+			background-image: url(images/sidebar.png);
+			margin-right: 5px;
+			margin-left: 10px;
+		}
+		.cssspri1{
+			background-position: 0px 0px;
+		}
+		.cssspri2{
+			background-position: 0px -24px;
+		}
+		.cssspri3{
+			background-position: 0px -48px;
+		}
+		.cssspri4{
+			background-position: 0px -72px;
+		}
+		.cssspri5{
+			background-position: 0px -96px;
+		}
+		.cssspri6{
+			background-position: 0px -120px;
+		}
+		.cssspri7{
+			background-position: 0px -144px;
+		}
+		#yemian{
+			width: 72%;
+			background-color: blue;
+			color: white;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			padding-left: 300px;
+			margin:0 auto;
+			line-height: 20px;
+		}
+	</style>
+</head>
+<body>
+	background-position是这节课的实现原理。<br>
+	雪碧图的自动生成工具——CssGaga，下载地址：http://www.99css.com/archives/1524，<a href="http://www.99css.com/archives/1524">点击此处</a>即可打开下载页面<br>
+	这个软件的下载页面说明了如何操作，但是自己觉得有点复杂，可能是因为没有熟练。
+	<p>雪碧图：横坐标为负数表示将大图向左边移动, 纵坐标为负数表示将大图向下边移动。</p>
+	<div id="content">
+		
+		<ul>
+			<li><i class="cssspri1"></i>服装内衣</li>
+			<li><i class="cssspri2"></i>鞋包配饰</li>
+			<li><i class="cssspri3"></i>运动户外</li>
+			<li><i class="cssspri4"></i>手机数码</li>
+			<li><i class="cssspri5"></i>家电办公</li>
+			<li><i class="cssspri6"></i>电影电视</li>
+			<li><i class="cssspri7"></i>母婴用品</li>
+		</ul>
+	</div>
+	<p>存在的问题：雪碧图的图标的高度和右边的文字不在一条水平线上显示。目前自己做到的步骤时增大li的高度和行高，然后两者勉强能够在一条线上显示。还有另外一种做法是自己增大字体的号来调整，最后自己实践之后也可以，但是这两种的效果都是有点太被动了。</p>
+	<p style="color: red;
+	font-size: 20px;font-weight: bolder;">需要解决的问题：为什么那张背景图片会在贴着上边显示？如何让它垂直居中显示？</p>
+	<div id="yemian">
+		<p>页面说明</p>
+		<p>完成时间：2017年3月21日16：01</p>
+	</div>
+</body>
+</html>

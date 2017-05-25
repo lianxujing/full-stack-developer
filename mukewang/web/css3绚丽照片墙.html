@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css3绚丽照片墙</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{background-color: #eee;}
+		*{margin:0;padding:0;}
+		#content{
+			width: 960px;
+			height: 450px;
+			margin:0 auto;
+			position: relative;
+		}
+		img{
+			padding:10px 10px 15px;
+			background-color: #fff;
+			border:1px solid #ddd;
+			position: absolute;
+		}
+		img:hover{
+			z-index: 100;
+		}
+		.imga1{
+			left: 50px;
+			top: 100px;
+			transform: rotate(40deg);
+			-moz-transform:rotate(40deg);
+			-webkit-transform: rotate(40deg);
+			transition: 2s;
+			-moz-transition: 2s;
+			-webkit-transition: 2s;
+		}
+		.imga1:hover{
+					transform: rotate(0deg);
+					-moz-transform:rotate(0deg);
+					-webkit-transform: rotate(0deg);
+					transform: scale(1.2);
+					-moz-transform: scale(1.2);
+					-webkit-transform: scale(1.2);
+					box-shadow: 5px 5px 5px red;
+				}
+
+		.imga2{
+			left: 200px;top: 150px;transform: rotate(20deg);-moz-transform:rotate(20deg);
+			-webkit-transform: rotate(20deg);transition: 2s;-moz-transition: 2s;
+			-webkit-transition: 2s;
+		}
+		.imga2:hover{
+			transform: rotate(45deg);-moz-transform:rotate(45deg);-webkit-transform: rotate(45deg);
+			transform: scale(1.5);-moz-transform: scale(1.5);-webkit-transform: scale(1.5);
+			box-shadow: 5px 5px 5px blue;
+		}
+
+		.imga3{
+			left: 10px;top: 130px;transform: rotate(60deg);-moz-transform:rotate(60deg);
+			-webkit-transform: rotate(60deg);transition: 2s;-moz-transition: 2s;
+			-webkit-transition: 2s;
+		}
+		.imga3:hover{
+			transform: rotate(10deg);-moz-transform:rotate(10deg);-webkit-transform: rotate(10deg);
+			transform: scale(1.1);-moz-transform: scale(1.1);-webkit-transform: scale(1.5);
+			box-shadow: 5px 5px 5px blue;
+		}
+
+		.imga4{
+			left: 300px;top: 50px;transform: rotate(60deg);-moz-transform:rotate(60deg);
+			-webkit-transform: rotate(60deg);transition: 2s;-moz-transition: 2s;
+			-webkit-transition: 2s;
+		}
+		.imga4:hover{
+			transform: rotate(10deg);-moz-transform:rotate(10deg);-webkit-transform: rotate(10deg);
+			transform: scale(1.1);-moz-transform: scale(1.1);-webkit-transform: scale(1.5);
+			box-shadow: 5px 5px 5px blue;
+		}
+
+		.imga5{
+			left: 600px;top: 50px;transform: rotate(60deg);-moz-transform:rotate(60deg);
+			-webkit-transform: rotate(60deg);transition: 2s;-moz-transition: 2s;
+			-webkit-transition: 2s;
+		}
+		.imga5:hover{
+			transform: rotate(10deg);-moz-transform:rotate(10deg);-webkit-transform: rotate(10deg);
+			transform: scale(1.1);-moz-transform: scale(1.1);-webkit-transform: scale(1.5);
+			box-shadow: 5px 5px 5px blue;
+		}
+
+		.imga6{
+			left: 500px;top: 50px;transform: rotate(60deg);-moz-transform:rotate(60deg);
+			-webkit-transform: rotate(60deg);transition: 2s;-moz-transition: 2s;
+			-webkit-transition: 2s;
+		}
+		.imga6:hover{
+			transform: rotate(10deg);-moz-transform:rotate(10deg);-webkit-transform: rotate(10deg);
+			transform: scale(1.1);-moz-transform: scale(1.1);-webkit-transform: scale(1.5);
+			box-shadow: 5px 5px 5px blue;
+		}
+
+		.imga7{
+			left: 800px;top: 80px;transform: rotate(60deg);-moz-transform:rotate(60deg);
+			-webkit-transform: rotate(60deg);transition: 2s;-moz-transition: 2s;
+			-webkit-transition: 2s;
+		}
+		.imga7:hover{
+			transform: rotate(10deg);-moz-transform:rotate(10deg);-webkit-transform: rotate(10deg);
+			transform: scale(1.1);-moz-transform: scale(1.1);-webkit-transform: scale(1.5);
+			box-shadow: 5px 5px 5px blue;
+		}
+
+		.imga8{
+			left: 450px;top: 10px;transform: rotate(60deg);-moz-transform:rotate(60deg);
+			-webkit-transform: rotate(60deg);transition: 2s;-moz-transition: 2s;
+			-webkit-transition: 2s;
+		}
+		.imga8:hover{
+			transform: rotate(10deg);-moz-transform:rotate(10deg);-webkit-transform: rotate(10deg);
+			transform: scale(1.1);-moz-transform: scale(1.1);-webkit-transform: scale(1.5);
+			box-shadow: 5px 5px 5px blue;
+		}
+
+		.imga9{
+			left: 760px;top: 80px;transform: rotate(60deg);-moz-transform:rotate(60deg);
+			-webkit-transform: rotate(60deg);transition: 2s;-moz-transition: 2s;
+			-webkit-transition: 2s;
+		}
+		.imga9:hover{
+			transform: rotate(10deg);-moz-transform:rotate(10deg);-webkit-transform: rotate(10deg);
+			transform: scale(1.1);-moz-transform: scale(1.1);-webkit-transform: scale(1.5);
+			box-shadow: 5px 5px 5px blue;
+		}
+
+		.imga6{
+			left: 550px;top: 30px;transform: rotate(60deg);-moz-transform:rotate(60deg);
+			-webkit-transform: rotate(60deg);transition: 2s;-moz-transition: 2s;
+			-webkit-transition: 2s;
+		}
+		.imga6:hover{
+			transform: rotate(10deg);-moz-transform:rotate(10deg);-webkit-transform: rotate(10deg);
+			transform: scale(1.1);-moz-transform: scale(1.1);-webkit-transform: scale(1.5);
+			box-shadow: 5px 5px 5px blue;
+		}
+		#content1{
+			width: 200px;
+			height: 200px;
+			background:pink;
+			margin-left: 400px;
+			transition: 2s;
+			line-height: 200px;
+			text-align: center;
+		}
+		#content1:hover{
+			transform: rotate(720deg);
+			transform: scale(2);
+			background-color: red;
+			-webkit-transform:rotate(720deg) scale(2);
+       		-moz-transform:rotate(720deg) scale(2); 		
+		}
+	</style>
+</head>
+<body>
+	<div id="biji">
+		<p>笔记</p>
+		<p>
+			1、一个关联课程《十天学会CSS3》
+		</p>
+	</div>
+	<h1 style="text-align: center;">CSS3照片墙</h1>
+	<div id="content">
+		<img src="images/mm1.jpg" class="imga1" />
+		<img src="images/mm2.jpg" class="imga2" />
+		<img src="images/mm3.jpg" class="imga3" />
+		<img src="images/mm4.jpg" class="imga4" />
+		<img src="images/mm5.jpg" class="imga5" />
+		<img src="images/mm6.jpg" class="imga6" />
+		<img src="images/mm7.jpg" class="imga7" />
+		<img src="images/mm8.jpg" class="imga8" />
+		<img src="images/mm9.jpg" class="imga9" />
+		<img src="images/mm10.jpg" class="imga10" />
+	</div>
+	<div id="content1">
+		您好！
+	</div>
+	<div id="yemian" style="width: 72%;background-color: blue;color: white;padding-top: 30px;padding-bottom: 30px;padding-left: 300px;margin:0 auto;line-height: 20px;">
+		<p>页面说明</p>
+		<p>完成时间：2017年3月21日17：46</p>
+	</div>
+</body>
+</html>

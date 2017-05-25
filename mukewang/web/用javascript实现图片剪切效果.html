@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图片剪切效果</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body{
+			background-color: #333;
+			color: white;
+		}
+		#box{
+			position: absolute;
+			top: 100px;
+			left: 200px;
+			width: 600px;
+			height: 480px;
+		}
+		#img1{
+			opacity: 0.2;
+			position:absolute;
+			top: 0;
+			left: 0;
+		}
+		#img2{
+			position: absolute;
+			top: 0;
+			left: 0;
+			clip: rect(0,200px,200px,0);
+		}
+		#main{
+			border:1px solid white;width: 200px;height: 200px;
+			position: absolute;
+
+		}
+		.mindiv{
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			background-color: white;	
+		}
+		.left-up{top: -4px;left: -4px;cursor: nw-resize;}
+		.up{left: 50%;margin-left: -4px;top: -4px;cursor: n-resize;}
+		.right-up{top: -4px;right: -4px;cursor: ne-resize;}
+		.right{top: 50%;margin-top: -4px;right: -4px;cursor: e-resize;}
+		.right-down{bottom: -4px;right: -4px;cursor: nw-resize;}
+		.down{right: 50%;margin-right: -4px;bottom: -4px;cursor: n-resize;}
+		.left{left: -4px;top: 50%;margin-top: -4px;cursor: e-resize;}
+		.left-down{left: -4px;bottom: -4px;cursor: ne-resize;}
+	</style>
+</head>
+<body>
+	<p>特效说明：通过三层叠加实现。<br>
+	offsetleft:元素相对于父元素左边距的距离。<br></p>
+	<div id="box">
+		<image src="images/1.jpg" id="img1"/>
+		<image src="images/1.jpg" id="img2"/>
+		<div id="main">
+			<div class="mindiv left-up"></div>
+			<div class="mindiv up"></div>
+			<div class="mindiv right-up"></div>
+			<div class="mindiv right"></div>
+			<div class="mindiv right-down"></div>
+			<div class="mindiv down"></div>
+			<div class="mindiv left-down"></div>
+			<div class="mindiv left"></div>
+		</div>
+	</div>
+	<link rel="stylesheet" type="text/javascript" href="图片剪切效果.js">
+</body>
+</html>

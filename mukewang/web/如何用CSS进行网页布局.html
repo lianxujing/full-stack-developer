@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>如何用CSS进行网页布局</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#note{
+			background: url(../images/纹理.jpg);
+			width: 80%;
+			margin:10px auto;
+			font:18px "微软雅黑";
+			word-spacing: 1em;
+			line-height: 30px;
+			text-indent: 2em;
+		}
+		#note h2{
+			background-color: gray;
+			padding:5px;
+		}
+		.blue{color: blue;}
+		.red{color: red;}
+	</style>
+</head>
+<body>
+	<div id="note">
+		<h2>课程笔记</h2>
+		<P>
+			布局：又称版式布局，是网页UI设计师将有限的视觉元素进行有机的排列组合。网页设计一定程度上继承了报纸、杂志等的设计思想。
+		</P>
+		<p>
+			一列布局、两列布局、三列布局
+		</p>
+		<p>
+			margin:0 auto水平居中。<span class="blue">水平居中和垂直居中的设置</span>
+		</p>
+		<p>
+			写三列布局的方法：两边的宽度固定，中间的div宽度自适应。<br/>
+			第一种：使用定位的方法，左边的div左上角absolute定位、右边的div右上角absolute定位，中间的div设置左右外边距。<br/>
+			第二种：左右两个使用浮动。
+		</p>
+		<p>
+			网页布局相当于块与块的关系，挨着、嵌套和叠压。
+		</p>
+		<h2>页面完成时间：<br/></h2>
+		<p>2017.4.4 08:52</p>
+	</div>
+</body>
+</html>

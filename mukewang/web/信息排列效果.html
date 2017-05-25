@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>信息排列效果页面</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{margin:o;padding:0;}
+		body{
+			font-family: "微软雅黑";
+			font-size: 14px;
+		}
+		a{text-decoration: none;}
+		#box{
+			width: 550px;
+			border:1px solid gray;
+			margin:0 auto;
+		}
+		.top{
+			height: 40px;
+		}
+		.top a{
+			height: 16px;
+			width: 16px;
+			display: block;
+			float: right;
+			margin:5px;
+		}
+		.btn-list-off{
+			background: #fff url(images/btns.jpg) no-repeat -38px 0px;
+		}
+		.btn-car-on{
+			background: #fff url(images/btns.jpg) no-repeat -21px -34px;
+		}
+		.btn-list-on{
+			background: #fff url(images/btns.jpg) no-repeat -21px 0px;
+		}
+		.btn-car-off{
+			background: #fff url(images/btns.jpg) no-repeat -38px -32px;
+		}
+		ul{list-style: none;overflow: hidden;}
+		#box ul li{
+			width: 164px;
+			border:1px solid #aaa;
+			float: left;
+			margin:5px;
+		}
+		.a-img{
+			height: 164px;
+			width: 164px;
+			overflow: hidden;
+			display: block;
+		}
+		p a,p span{
+			display: block;
+			line-height: 23px;
+			padding-left: 10px;
+		}
+		.bottom{
+			line-height:40px;
+			height: 40px;
+			text-align: center;
+			background-color: #ccc;
+		}
+		.small{
+			height: 50px;
+			width: 50px;
+			float: left;
+			margin:5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="top">
+			<a href="#" title="列表模式" class="btn-list-off" id="btn1"></a>
+			<a href="#" title="卡片模式" class="btn-car-on" id="btn2"></a>
+		</div>
+		<ul>
+			<li>
+				<div class="con">
+					<a href="#" class="a-img"><img src="images/big.jpg"></a>
+					<p>
+						<a href="#">白杨</a>
+						<span>辽宁</span>
+						<span>21个共同好友</span>
+					</p>
+				</div>
+				<div class="bottom">未分组的好友</div>
+			</li>
+			<li>
+				<div class="con">
+					<a href="#" class="a-img"><img src="images/big.jpg"></a>
+					<p>
+						<a href="#">白杨</a>
+						<span>辽宁</span>
+						<span>21个共同好友</span>
+					</p>
+				</div>
+				<div class="bottom">未分组的好友</div>
+			</li><li>
+				<div class="con">
+					<a href="#" class="a-img"><img src="images/big.jpg"></a>
+					<p>
+						<a href="#">白杨</a>
+						<span>辽宁</span>
+						<span>21个共同好友</span>
+					</p>
+				</div>
+				<div class="bottom">未分组的好友</div>
+			</li><li>
+				<div class="con">
+					<a href="#" class="a-img"><img src="images/big.jpg"></a>
+					<p>
+						<a href="#">白杨</a>
+						<span>辽宁</span>
+						<span>21个共同好友</span>
+					</p>
+				</div>
+				<div class="bottom">未分组的好友</div>
+			</li>
+		</ul>
+	</div>
+	<div style="margin-top: 50px;"><strong style="font-size: 50px;color: red;font-weight: bolder;">笔记:</strong>图片大小超过A标签的大小的范围，使用overflow：hidden属性解决问题。另外这个属性和属性值还可以用来清除浮动，当一个框里面的元素设置为浮动之后，父元素的高度变为0，这个时候为父元素添加overflow:hidden属性就可以清除浮动了，父元素就可以包含子元素了。
+	</div>
+	<div>这里用到了JS的只是，利用JS更改CSS，利用JS更改图片的路径，这些都需要自己学习。</div>
+	<script>
+		window.onload=function(){
+			var listbtn=document.getElementById("btn1");
+			var carbtn=document.getElementById("btn2");
+
+			var imgs=document.getElementsByTagName("img");
+
+			listbtn.onclick=function(){
+
+				listbtn.className="btn-list-on";
+				carbtn.className="btn-car-off";
+
+				for(var i=0;i<imgs.length;i++)
+				{
+					imgs[i].src="images/small.jpg";
+					imgs[i].parentNode.className="a-img small";
+				}
+			}
+
+			carbtn.onclick=function(){
+
+				listbtn.className="btn-list-off";
+				carbtn.className="btn-car-on";
+
+				for(var i=0;i<imgs.length;i++)
+				{
+					imgs[i].src="images/big.jpg";
+					imgs[i].parentNode.className="a-img";
+				}
+			}
+
+
+		}
+	</script>
+</body>
+</html>
