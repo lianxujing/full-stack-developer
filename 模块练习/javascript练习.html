@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javascript练习页面</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<p>说明：这个页面是用来看总结文档的练习用的。</p>
+	姓名：<input type="text" name="" id="in1" width="200px" height="50px" onfocus="igd()" placeholder="请输入您的姓名"/><span id="appen" ></span>
+	<div id="box" onclick="myfunction()">这是点击之前的内容。</div>
+	<i>写js代码的时候一定要注意大小的单词</i>
+	<button type="button" onclick="myFunction()">Try it</button>
+	<img src="1.jpg" width="50px" height="50px" onmouseover ="myfun()" id="im"/>
+	<div id="box2" onmouseover ="app()">hahaha</div>
+	
+	<script>
+		//这是有点问题，随后有时间的话看看
+	function myfunction()
+	{
+		document.getElementById("box").innerHTML="单相思";
+		document.write("你是宁静吗，我是徐静");
+		var my="nihaoa你好啊";
+		alert(my);
+		var message=confirm("你喜欢英语吗？");
+		if(message==ture){
+			document.write("恭喜你，也希望你能够有所得");
+		}
+		else{
+			document.write("没事，英语现在也在往汉语转，不是吗，嘿嘿");
+		}
+		var getattr=document.getElementById("box").getAttribute("id");
+		var box2=document.getElementById("box2").innerHTML(getattr);
+		alert(box2);
+		
+	}
+	function app()
+	{
+		var otest=document.getElementById("box2");
+		var newnode=document.createElement("p");
+		newnode.innerHTML="你是谁？宁静吗？不是得花就不开门了";
+		otest.appendChild(newnode);
+		document.getElementById("im").src="2.jpg";
+		document.getElementById("box2").style.color="blue";
+	}
+	function myfun()
+	{
+		docuemnt.getElementById("im").src="3.jpg";
+	}
+	function igd()
+	{
+		var apa=document.getElementById("appen");
+		var aba=document.createElement("strong");
+		aba.innerHTML="请输入你的名字!";
+		aba.style.color="red";
+		aba.style.margin="30px";
+		apa.appendChild(aba);
+	}
+	</script>
+</body>
+</html>
